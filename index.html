@@ -175,9 +175,35 @@
                 <section>
                     <h1>Mais au final, ça vaut le coup</h1>
 
+                    <table>
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th>Fiche produit</th>
+                                <th>Panier</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Wall time</strong></td>
+                                <td>-22 % (-320ms)</td>
+                                <td>-13 % (-370ms)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CPU time</strong></td>
+                                <td>-23 % (-310ms)</td>
+                                <td>-15 % (-390ms)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Memory</strong></td>
+                                <td>-41 % (-19Mb)</td>
+                                <td>-41 % (-25Mb)</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <aside class="notes">
                         Chiffres basés sur l'environnment de dev. <br/>
-                        Retard sur la migration car retardés par l'arrivée tardive de l'extension newrelic <br/>
+                        Retard sur la migration car retardée par l'arrivée tardive de l'extension newrelic <br/>
                         Dans tous les cas, il est rare d’avoir en une seule upgrade un tel gain de perf
                         pour un coût de migration raisonnable. <br/>
                         Donc allez-y ! Migrez !
