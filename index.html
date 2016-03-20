@@ -46,10 +46,10 @@
                     <a href="https://github.com/srogier"><i class="fa fa-github"></i> srogier</a>
 
                     <aside class="notes">
-                        L'objectif de talk est de vous présenter les outils aidant à la migration vers php7 et des problèmes potentiels rencontrés de celle-ci. <br/>
-                        Et que cette migration peut-être plus simple qu'on ne le pense. <br/>
-                        Je vais vous présenter ce que nous avons fait pour la migration de decitre.fr, un site en magento, vers php7. <br/>
-                        Depuis septembre, et les toutes premières RC de php, nous avons débuté la préparation de cette migration.
+                        Dernière version de php7 sortie en décembre (fonctionnalité + gain de perf)<br />
+                        Depuis sept et les premières RC, chez Decitre début de la préparation de la migration <br />
+                        J'ai dix minute ce soir pour vous présenter ce que nous avons fait et sommes en train de faire pour la migration de decitre.fr <br />
+                        Je vais vous parler des outils aidant à la migration vers php7 et des problèmes potentiels rencontrés de celle-ci. <br />
                     </aside>
                 </section>
 
@@ -72,9 +72,10 @@
 
                     <p class="fragment">Et une couverture de code à 100% ?</p>
 
-                    <p class="fragment">Upgradez, lancez les tests et corrigez les erreurs</p>
-
                     <aside class="notes">
+
+                        Upgradez, lancez les tests et corrigez les erreurs
+
                         Mais dans la vraie vie, les projets ont rarement une couverture de code à 100% <br/>
 
                         Voir certains n'ont aucun test <br/>
@@ -91,7 +92,7 @@
                     <a href="http://php.net/manual/en/migration70.php">http://php.net/manual/en/migration70.php</a>
 
                     <aside class="notes">
-                        PHP fournit un guide de migration relativement complet avec
+                        PHP fourni un guide de migration relativement complet avec
                         <ul>
                             <li>les ruptures de compatibilité</li>
                             <li>les nouvelles fonctionnalités</li>
@@ -114,9 +115,9 @@
                         <aside class="notes">
                             Outil de detection des erreurs et incompatibilité php7 <br/>
                             Fonctionne à partir de php 5.3 <br/>
-                            Se base sur PHP Parser de Nikita Popov <br/>
+                            Se base sur PHP Parser<br/>
                             Découpe le code en token et identifie les cas qui peuvent poser problème <br/>
-                            Installable via composer.phar en global et lançable dans un dossier<br/>
+                            Facilement installable via composer.phar en global et lançable dans un dossier<br/>
                         </aside>
                     </section>
 
@@ -129,7 +130,11 @@
                             Il ne reste plus qu'à corriger <br/>
                             Fastidieux, mais efficace. <br/>
 
-                            220 alertes sur magento (certaines uniquement des alertes) <br/>
+                            220 alertes sur magento (code, magento, ZF) (certaines uniquement des alertes) <br/>
+
+                            Contrôle des conditions de la rupture de compat non atteintes. <br/>
+
+                            Très efficace : cf bug non listé <br />
 
                             On a maintenant un code compatible avec php7. Mais comment le tester ? <br/>
                         </aside>
@@ -142,8 +147,8 @@
 
                     <aside class="notes">
                         Vous avez le choix ! <br/>
-                        Apt-get update si vous voulez <br/>
                         Images dipos, packages rpm et deb également <br/>
+                        Apt-get update si vous voulez <br/>
                         On en a profité pour passer sur docker en dev et facilement basculer entre 5.6 et 7.0
                     </aside>
                 </section>
@@ -154,10 +159,11 @@
                     <a class="fragment" href="https://github.com/gophp7/gophp7-ext/wiki/extensions-catalog"><i class="fa fa-github"></i> https://github.com/gophp7/gophp7-ext/wiki/extensions-catalog</a>
 
                     <aside class="notes">
-                        Toutes ne sont pas portée <br/>
+                        Toutes ne sont pas portées <br/>
                         Exemple de mongo totalement ré-écrit. <br/>
                         Etat des lieux des différentes extensions. <br/>
-                        Attention des versions php7 ne sont pas forcément packagés, mais utilisable sur une branche (memcached par exemple).
+                        Attention des versions php7 ne sont pas forcément packagés, mais utilisable sur une branche (memcached par exemple). <br />
+                        Etape la plus compliquée et aléatoire de la migration <br />
                     </aside>
 
                 </section>
@@ -167,8 +173,8 @@
 
                     <aside class="notes">
                         Dans notre cas, passage de wheezy à jessie avec upgrade de version apache et varnish
-                        afin de bénéficier des dernières versions maintenues
-                        PHP7 ne sera peut-être pas le plus douloureux.
+                        afin de bénéficier des dernières versions maintenues <br />
+                        PHP7 ne sera peut-être pas le plus compliqué et révéler des surprises.
                     </aside>
                 </section>
 
